@@ -15,8 +15,7 @@ spec:
         app: netflix-app
     spec:
       containers:
-        - name: netflix-app
-          image: docker.io/manoharmattepu/netflix-app:${IMAGE_TAG}
-          ports:
-            - containerPort: 3000
-          imagePullPolicy: Always
+      - name: netflix-app
+        image: manoharmattepu/netflix-app:1   # <-- Replace with your Jenkins IMAGE_TAG if needed
+        ports:
+        - containerPort: 3000
