@@ -8,8 +8,8 @@ pipeline {
   }
   stages {
     stage('Checkout') {
-      steps {
-        git branch: 'main', url: 'https://github.com/Manohar-mattepu/netflix-app.git'
+      steps { 
+        git branch: 'master', url: 'https://github.com/Manohar-mattepu/netflix-app.git'
       }
     }
     stage('Build Image') {
