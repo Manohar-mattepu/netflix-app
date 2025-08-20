@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    REGISTRY = "docker.io/<your-dockerhub-username>"
+    REGISTRY = "docker.io/manoharmattepu"
     APP = "netflix-app"
     IMAGE_TAG = "${env.BUILD_NUMBER}"
     KUBE_CONFIG_CREDENTIALS = "kubeconfig-cred-id"
@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/<your-username>/netflix-app.git'
+        git branch: 'main', url: 'https://github.com/Manohar-mattepu/netflix-app.git'
       }
     }
     stage('Build Image') {
