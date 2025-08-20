@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: netflix-app
-        image: manoharmattepu/netflix-app:9   # <-- Replace with your Jenkins IMAGE_TAG if needed
+        image: manoharmattepu/netflix-app:10   # <-- Replace with your Jenkins IMAGE_TAG if needed
         ports:
         - containerPort: 3000
