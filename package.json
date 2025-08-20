@@ -1,0 +1,12 @@
+{
+  "name": "netflix-app",
+  "version": "1.0.0",
+  "description": "Simple Netflix clone demo app",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
