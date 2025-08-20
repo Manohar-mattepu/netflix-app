@@ -25,14 +25,14 @@ pipeline {
         }
       }
     }
-    stage('Deploy to K8s') {
-      steps {
-        withCredentials([file(credentialsId: "${KUBE_CONFIG_CREDENTIALS}", variable: 'KUBECONF')]) {
-          sh 'mkdir -p $HOME/.kube'
-          sh 'cp $KUBECONF $HOME/.kube/config'
-          sh "kubectl set image deployment/netflix netflix=${REGISTRY}/${APP}:${IMAGE_TAG} -n production --record"
+    stage('Deploy to Kubernetes') {
+            steps {
+                // Inject kubeconfig file stored in Jenkins credentials
+                withCredentials([file(credentialsId: 'kubeconfig-cred-id', variable: 'KUBECONFIG')]) {
+                    sh "kubectl apply -f k8s-deployment.yaml"
+                    sh "kubectl apply -f k8s-service.yaml"
+                }
+            }
         }
-      }
     }
-  }
 }
